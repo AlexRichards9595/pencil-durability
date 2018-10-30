@@ -9,3 +9,8 @@ Pencil.prototype.write = function(words, paper) {
   paper.text = paper.text + words;
   return paper.text
 };
+
+
+Paper.prototype.scrapIt = function () {
+  this.text = '';
+};

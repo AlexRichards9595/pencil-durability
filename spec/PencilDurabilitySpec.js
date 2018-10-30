@@ -17,4 +17,10 @@ describe("Paper", function(){
     var actual = pencil.write("but Wisdom lingers.", paper);
     expect(actual).toBe("Knowledge comes, but Wisdom lingers.");
   });
+  it("should reset the paper when you scrapIt", function(){
+    pencil.write("something wrong", paper);
+    paper.scrapIt();
+    var actual = pencil.write("something... write haha", paper);
+    expect(actual).toBe("something... write haha");
+  });
 });
