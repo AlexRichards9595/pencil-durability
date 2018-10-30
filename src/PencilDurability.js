@@ -6,6 +6,6 @@ var Paper = function() {
 };
 
 Pencil.prototype.write = function(words, paper) {
-  paper.text = words;
+  paper.text = paper.text + words;
   return paper.text
 };
