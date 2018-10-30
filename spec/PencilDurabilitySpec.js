@@ -19,6 +19,10 @@ describe("A Pencil and a piece of paper", function(){
       pencil.write("down5", paper);
       expect(pencil.sharpness).toEqual(45);
     });
+    it("should not lose sharpness for spaces", function(){
+      pencil.write("down 5", paper);
+      expect(pencil.sharpness).toEqual(45);
+    });
   });
 
 

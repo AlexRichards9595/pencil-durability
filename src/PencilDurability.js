@@ -7,7 +7,7 @@ var Paper = function() {
 
 Pencil.prototype.write = function(words, paper) {
   paper.text = paper.text + words;
-  this.sharpness = this.sharpness - words.length;
+  this.sharpness = this.sharpness - words.replace(/\s/g, '').length;
   return paper.text;
 };
 
