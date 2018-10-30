@@ -1,5 +1,5 @@
-var Pencil = function() {
-
+var Pencil = function(sharpness) {
+  this.sharpness = sharpness;
 };
 var Paper = function() {
   this.text = ''

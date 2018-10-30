@@ -6,6 +6,10 @@ describe("Pencil", function() {
     var actual = pencil.write("Knowledge comes, ", paper);
     expect(actual).toBe("Knowledge comes, ");
   });
+  it("should have the sharpness you ask for", function() {
+    let superSharpPencil = new Pencil(100);
+    expect(superSharpPencil.sharpness).toEqual(100);
+  });
 });
 
 
