@@ -7,7 +7,8 @@ var Paper = function() {
 
 Pencil.prototype.write = function(words, paper) {
   paper.text = paper.text + words;
-  return paper.text
+  this.sharpness = this.sharpness - words.length;
+  return paper.text;
 };
 
 

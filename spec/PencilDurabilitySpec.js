@@ -1,8 +1,9 @@
 describe("A Pencil and a piece of paper", function(){
-  var pencil = new Pencil();
+  var pencil = new Pencil(50);
   var paper = new Paper();
   beforeEach(function(){
     paper.scrapIt();
+    pencil.sharpness = 50;
   });
 
   describe("Pencil", function() {
@@ -14,7 +15,12 @@ describe("A Pencil and a piece of paper", function(){
       let superSharpPencil = new Pencil(100);
       expect(superSharpPencil.sharpness).toEqual(100);
     });
+    it("should lose sharpness as it writes", function(){
+      pencil.write("down5", paper);
+      expect(pencil.sharpness).toEqual(45);
+    });
   });
+
 
 
   describe("Paper", function(){
