@@ -118,5 +118,11 @@ describe("A Pencil and a piece of paper", function(){
       paper.edit("edit");
       expect(paper.text).toBe("this shouldn't change");
     });
+    it("edit should replace blank space with replacement word", function(){
+      pencil.write("this should change", paper);
+      pencil.erase("should", paper);
+      paper.edit("did");
+      expect(paper.text).toBe("this did    change");
+    });
   });
 });

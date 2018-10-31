@@ -72,6 +72,10 @@ Paper.prototype.scrapIt = function () {
 Paper.prototype.edit = function(words) {
   let index = this.text.indexOf("  ") ;
   if (index != -1) {
-  
+    index = index + 1;
+    for (let i = 0; i < words.length; i++) {
+      this.text = this.text.substr(0,index) + words.charAt(i) + this.text.substr(index+1);
+      index++;
+    }
   }
 };
