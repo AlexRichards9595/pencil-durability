@@ -80,6 +80,10 @@ describe("A Pencil and a piece of paper", function(){
       pencil.erase("never!", paper);
       expect(paper.text).toBe("erase erase erase");
     });
+    it("has a default eraser life when new", function(){
+      var newEraser = new Pencil();
+      expect(newEraser.eraser).toBe(10);
+    });
   });
 
 

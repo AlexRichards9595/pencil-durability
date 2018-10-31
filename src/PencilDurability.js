@@ -3,6 +3,7 @@ var Pencil = function(rating, length) {
   this.sharpness = rating;
   this.durability = rating;
   this.length = length;
+  this.eraser = 10;
 };
 var Paper = function() {
   this.text = ''
