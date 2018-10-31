@@ -70,6 +70,11 @@ describe("A Pencil and a piece of paper", function(){
       reallyShortPencil.sharpen();
       expect(reallyShortPencil.sharpness).toBe(preSharpenedSharpness);
     });
+    it("should erase the last occurence of the word its told to erase", function(){
+      pencil.write("erase erase erase", paper);
+      pencil.erase("erase", paper);
+      expect(paper.text).toBe("erase erase      ");
+    });
   });
 
 
