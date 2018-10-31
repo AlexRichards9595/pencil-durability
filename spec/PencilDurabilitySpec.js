@@ -63,6 +63,13 @@ describe("A Pencil and a piece of paper", function(){
       pencil.sharpen();
       expect(originalLength).toBe(pencil.length + 1);
     });
+    it("should not sharpen if its length is 0", function(){
+      let reallyShortPencil = new Pencil(50, 0);
+      reallyShortPencil.write("four", paper);
+      var preSharpenedSharpness = reallyShortPencil.sharpness;
+      reallyShortPencil.sharpen();
+      expect(reallyShortPencil.sharpness).toBe(preSharpenedSharpness);
+    });
   });
 
 

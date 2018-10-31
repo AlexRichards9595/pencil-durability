@@ -45,8 +45,10 @@ Pencil.prototype.writeAsMuchAsYouCan = function(words) {
   return words;
 };
 Pencil.prototype.sharpen = function() {
+  if (this.length > 0){
     this.sharpness = this.durability;
     this.length--;
+  }
 };
 
 
