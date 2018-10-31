@@ -46,6 +46,7 @@ Pencil.prototype.writeAsMuchAsYouCan = function(words) {
 };
 Pencil.prototype.sharpen = function() {
     this.sharpness = this.durability;
+    this.length--;
 };
 
 

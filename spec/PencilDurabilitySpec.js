@@ -58,6 +58,11 @@ describe("A Pencil and a piece of paper", function(){
       pencil.sharpen();
       expect(pencil.sharpness).toBe(pencil.durability);
     });
+    it("should lose length when sharpened", function(){
+      var originalLength = pencil.length;
+      pencil.sharpen();
+      expect(originalLength).toBe(pencil.length + 1);
+    });
   });
 
 
