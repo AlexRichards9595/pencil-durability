@@ -46,6 +46,11 @@ describe("A Pencil and a piece of paper", function(){
       var actual = badPencil.write("THIS IS THE", paper);
       expect(actual).toBe("THIS       ")
     });
+    it("should have a durability and length", function(){
+      var newPencil = new Pencil(50, 8)
+      expect(newPencil.durability).toBe(50);
+      expect(newPencil.length).toBe(8);
+    });
   });
 
 
