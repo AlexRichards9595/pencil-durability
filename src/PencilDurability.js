@@ -24,9 +24,20 @@ Pencil.prototype.dullThePencil = function(words) {
     }
 };
 Pencil.prototype.writeAsMuchAsYouCan = function(words) {
-  let unwrittenString = words.slice(this.sharpness);
+  let pointOfDullarity = 0;
+  for (let i = 0; this.sharpness > 0; i++) {
+    if (words.charAt(i) == '\s' ) {
+    }
+   else {
+      this.sharpness = this.sharpness - 1;
+    }
+    pointOfDullarity++;
+  }
+
+
+  let unwrittenString = words.slice(pointOfDullarity);
   unwrittenString = unwrittenString.replace(/[a-zA-Z0-9]/g, ' ');
-  words = words.slice(0, this.sharpness) + unwrittenString;
+  words = words.slice(0, pointOfDullarity) + unwrittenString;
   return words;
 };
 
