@@ -54,7 +54,8 @@ Pencil.prototype.sharpen = function() {
 Pencil.prototype.erase = function(words, paper) {
   const indexOfFirstLetter = paper.text.lastIndexOf(words);
   if (indexOfFirstLetter != -1){
-    for (let i = indexOfFirstLetter + words.length - 1; i >= indexOfFirstLetter; i--) {
+    for (let i = indexOfFirstLetter + words.length - 1; i >= indexOfFirstLetter && this.eraser > 0; i--) {
+      this.eraser--;
       paper.text = paper.text.substr(0,i) + " " + paper.text.substr(i+1);
     }
   }

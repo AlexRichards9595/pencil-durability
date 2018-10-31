@@ -4,6 +4,7 @@ describe("A Pencil and a piece of paper", function(){
   beforeEach(function(){
     paper.scrapIt();
     pencil.sharpness = 50;
+    pencil.eraser = 10;
   });
 
   describe("Pencil", function() {
@@ -83,6 +84,12 @@ describe("A Pencil and a piece of paper", function(){
     it("has a default eraser life when new", function(){
       var newEraser = new Pencil();
       expect(newEraser.eraser).toBe(10);
+    });
+    it("should not erase after the eraser is gone", function(){
+      pencil.eraser = 3;
+      pencil.write("erase erase", paper);
+      pencil.erase("erase", paper);
+      expect(paper.text).toBe("erase er   ");
     });
   });
 
