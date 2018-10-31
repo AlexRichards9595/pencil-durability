@@ -113,5 +113,10 @@ describe("A Pencil and a piece of paper", function(){
       var actual = pencil.write("something... write haha", paper);
       expect(actual).toBe("something... write haha");
     });
+    it("edit should do nothing if there is no blank space", function(){
+      pencil.write("this shouldn't change", paper);
+      paper.edit("edit");
+      expect(paper.text).toBe("this shouldn't change");
+    });
   });
 });

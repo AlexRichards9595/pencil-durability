@@ -68,3 +68,10 @@ Pencil.prototype.erase = function(words, paper) {
 Paper.prototype.scrapIt = function () {
   this.text = '';
 };
+
+Paper.prototype.edit = function(words) {
+  let index = this.text.indexOf("  ") ;
+  if (index != -1) {
+  
+  }
+};
