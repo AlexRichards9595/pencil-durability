@@ -5,10 +5,8 @@ var Pencil = function(rating, length) {
   this.length = length;
   this.eraser = 10;
 };
-var Paper = function() {
-  this.text = ''
-};
-//Pencil functions
+
+//Functions
 Pencil.prototype.write = function(words, paper) {
   if(this.sharpness >= words.length) {
     this.dullThePencil(words);
@@ -59,28 +57,6 @@ Pencil.prototype.erase = function(words, paper) {
         this.eraser--;
       }
       paper.text = paper.text.substr(0,i) + " " + paper.text.substr(i+1);
-    }
-  }
-};
-
-
-//Paper functions
-Paper.prototype.scrapIt = function () {
-  this.text = '';
-};
-
-Paper.prototype.edit = function(words) {
-  let index = this.text.indexOf("  ") ;
-  if (index != -1) {
-    index = index + 1;
-    for (let i = 0; i < words.length; i++) {
-      if (this.text.charAt(index) == ' '){
-        this.text = this.text.substr(0,index) + words.charAt(i) + this.text.substr(index+1);
-      }
-      else {
-        this.text = this.text.substr(0,index) + "@" + this.text.substr(index+1);
-      }
-      index++;
     }
   }
 };
