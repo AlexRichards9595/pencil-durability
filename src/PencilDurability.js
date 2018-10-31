@@ -28,6 +28,9 @@ Pencil.prototype.writeAsMuchAsYouCan = function(words) {
   for (let i = 0; this.sharpness > 0; i++) {
     if (words.charAt(i) == '\s' ) {
     }
+    else if (words.charAt(i) != words.charAt(i).toLowerCase()) {
+      this.sharpness = this.sharpness -2;
+    }
    else {
       this.sharpness = this.sharpness - 1;
     }
