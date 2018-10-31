@@ -27,6 +27,10 @@ describe("A Pencil and a piece of paper", function(){
       pencil.write("down \n 5", paper);
       expect(pencil.sharpness).toEqual(45);
     });
+    it("should lose double sharpness for capital letters", function(){
+      pencil.write("DOWN 9", paper);
+      expect(pencil.sharpness).toEqual(41);
+    });
   });
 
 
