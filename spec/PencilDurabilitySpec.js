@@ -1,5 +1,5 @@
 describe("A Pencil and a piece of paper", function(){
-  var pencil = new Pencil(50);
+  var pencil = new Pencil(50, 8);
   var paper = new Paper();
   beforeEach(function(){
     paper.scrapIt();
@@ -50,6 +50,13 @@ describe("A Pencil and a piece of paper", function(){
       var newPencil = new Pencil(50, 8)
       expect(newPencil.durability).toBe(50);
       expect(newPencil.length).toBe(8);
+    });
+    it("should sharpen when sharpened", function(){
+      var originalSharpness = pencil.durability;
+      pencil.write("four", paper);
+      expect(pencil.sharpness).toBe(originalSharpness - 4);
+      pencil.sharpen();
+      expect(pencil.sharpness).toBe(pencil.durability);
     });
   });
 

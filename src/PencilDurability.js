@@ -1,3 +1,4 @@
+//Constructors
 var Pencil = function(rating, length) {
   this.sharpness = rating;
   this.durability = rating;
@@ -6,7 +7,7 @@ var Pencil = function(rating, length) {
 var Paper = function() {
   this.text = ''
 };
-
+//Pencil functions
 Pencil.prototype.write = function(words, paper) {
   if(this.sharpness >= words.length) {
     this.dullThePencil(words);
@@ -38,15 +39,17 @@ Pencil.prototype.writeAsMuchAsYouCan = function(words) {
     }
     pointOfDullarity++;
   }
-
-
   let unwrittenString = words.slice(pointOfDullarity);
   unwrittenString = unwrittenString.replace(/[a-zA-Z0-9]/g, ' ');
   words = words.slice(0, pointOfDullarity) + unwrittenString;
   return words;
 };
+Pencil.prototype.sharpen = function() {
+    this.sharpness = this.durability;
+};
 
 
+//Paper functions
 Paper.prototype.scrapIt = function () {
   this.text = '';
 };
