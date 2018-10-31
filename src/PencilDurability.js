@@ -7,15 +7,12 @@ var Paper = function() {
 
 Pencil.prototype.write = function(words, paper) {
   if(this.sharpness >= words.length) {
-    paper.text = paper.text + words;
     this.dullThePencil(words);
   }
   else {
-    let unwrittenString = words.slice(this.sharpness);
-    unwrittenString = unwrittenString.replace(/[a-zA-Z0-9]/g, ' ');
-    words = words.slice(0, this.sharpness) + unwrittenString
-    paper.text = paper.text + words;
+    words = this.writeAsMuchAsYouCan(words);
   }
+  paper.text = paper.text + words;
   return paper.text;
 };
 Pencil.prototype.dullThePencil = function(words) {
@@ -25,6 +22,12 @@ Pencil.prototype.dullThePencil = function(words) {
         this.sharpness = this.sharpness -1;
       }
     }
+};
+Pencil.prototype.writeAsMuchAsYouCan = function(words) {
+  let unwrittenString = words.slice(this.sharpness);
+  unwrittenString = unwrittenString.replace(/[a-zA-Z0-9]/g, ' ');
+  words = words.slice(0, this.sharpness) + unwrittenString;
+  return words;
 };
 
 
