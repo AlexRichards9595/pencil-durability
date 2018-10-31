@@ -75,6 +75,11 @@ describe("A Pencil and a piece of paper", function(){
       pencil.erase("erase", paper);
       expect(paper.text).toBe("erase erase      ");
     });
+    it("can't erase something that isn't there", function(){
+      pencil.write("erase erase erase", paper);
+      pencil.erase("never!", paper);
+      expect(paper.text).toBe("erase erase erase");
+    });
   });
 
 

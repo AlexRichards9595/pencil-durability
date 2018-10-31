@@ -52,8 +52,10 @@ Pencil.prototype.sharpen = function() {
 };
 Pencil.prototype.erase = function(words, paper) {
   const indexOfFirstLetter = paper.text.lastIndexOf(words);
-  for (let i = indexOfFirstLetter + words.length - 1; i >= indexOfFirstLetter; i--) {
-    paper.text = paper.text.substr(0,i) + " " + paper.text.substr(i+1);
+  if (indexOfFirstLetter != -1){
+    for (let i = indexOfFirstLetter + words.length - 1; i >= indexOfFirstLetter; i--) {
+      paper.text = paper.text.substr(0,i) + " " + paper.text.substr(i+1);
+    }
   }
 };
 
