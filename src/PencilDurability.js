@@ -74,7 +74,12 @@ Paper.prototype.edit = function(words) {
   if (index != -1) {
     index = index + 1;
     for (let i = 0; i < words.length; i++) {
-      this.text = this.text.substr(0,index) + words.charAt(i) + this.text.substr(index+1);
+      if (this.text.charAt(index) == ' '){
+        this.text = this.text.substr(0,index) + words.charAt(i) + this.text.substr(index+1);
+      }
+      else {
+        this.text = this.text.substr(0,index) + "@" + this.text.substr(index+1);
+      }
       index++;
     }
   }

@@ -124,5 +124,11 @@ describe("A Pencil and a piece of paper", function(){
       paper.edit("did");
       expect(paper.text).toBe("this did    change");
     });
+    it("should insert @ symbols if there are conflicts", function(){
+      pencil.write("oh no! conflicts!", paper);
+      pencil.erase("no!", paper);
+      paper.edit("YES SIR");
+      expect(paper.text).toBe("oh YES @@@flicts!");
+    });
   });
 });
