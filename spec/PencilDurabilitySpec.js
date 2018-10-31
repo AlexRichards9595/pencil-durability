@@ -31,6 +31,11 @@ describe("A Pencil and a piece of paper", function(){
       pencil.write("DOWN 9", paper);
       expect(pencil.sharpness).toEqual(41);
     });
+    it("should stop writing after the pencil goes dull", function(){
+      let badPencil = new Pencil(4);
+      var actual = badPencil.write("goodbye", paper);
+      expect(actual).toBe("good   ");
+    });
   });
 
 
