@@ -91,6 +91,12 @@ describe("A Pencil and a piece of paper", function(){
       pencil.erase("erase", paper);
       expect(paper.text).toBe("erase er   ");
     });
+    it("should not count spaces against its erase degradation", function(){
+      pencil.write("erase it", paper);
+      preErase = pencil.eraser;
+      pencil.erase("se it", paper);
+      expect(pencil.eraser).toBe(preErase-4);
+    });
   });
 
 

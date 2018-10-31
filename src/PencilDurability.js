@@ -55,7 +55,9 @@ Pencil.prototype.erase = function(words, paper) {
   const indexOfFirstLetter = paper.text.lastIndexOf(words);
   if (indexOfFirstLetter != -1){
     for (let i = indexOfFirstLetter + words.length - 1; i >= indexOfFirstLetter && this.eraser > 0; i--) {
-      this.eraser--;
+      if ((paper.text.charAt(i) != ' ') && (paper.text.charAt(i) != '\t') && (paper.text.charAt(i) != '\n')){
+        this.eraser--;
+      }
       paper.text = paper.text.substr(0,i) + " " + paper.text.substr(i+1);
     }
   }
