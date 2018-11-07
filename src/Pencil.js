@@ -8,27 +8,14 @@ var Pencil = function(rating, length) {
 
 //Functions
 Pencil.prototype.write = function(words, paper) {
-  if(this.sharpness > words.replace(/\s/g, '').length && words.toLowerCase() == words) {
-    this.dullThePencil(words);
-  }
-  else {
-    words = this.writeAsMuchAsYouCan(words);
-  }
+  words = this.writeAsMuchAsYouCan(words);
   paper.text = paper.text + words;
   return paper.text;
-};
-Pencil.prototype.dullThePencil = function(words) {
-  this.sharpness = this.sharpness - words.replace(/\s/g, '').length;
-    for (let i = 0; i < words.length; i++) {
-      if (words.charAt(i) != words.charAt(i).toLowerCase()) {
-        this.sharpness = this.sharpness -1;
-      }
-    }
 };
 Pencil.prototype.writeAsMuchAsYouCan = function(words) {
   let pointOfDullarity = 0;
   for (let i = 0; this.sharpness > 0 && i < words.length; i++) {
-    if (words.charAt(i) == ' ') {
+    if (words.charAt(i) == ' ' ||  words.slice(i, i+2).search(/\n/) != -1) {
     }
     else if (words.charAt(i) != words.charAt(i).toLowerCase()) {
       this.sharpness = this.sharpness -2;
