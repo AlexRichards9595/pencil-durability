@@ -43,9 +43,9 @@ describe("A Pencil and a piece of paper", function(){
       expect(actual).toBe("this is th     ");
     });
     it("should count capital letters when it stops writing", function(){
-      let badPencil = new Pencil(8);
-      var actual = badPencil.write("THIS IS THE", paper);
-      expect(actual).toBe("THIS       ")
+      let badPencil = new Pencil(4);
+      var actual = badPencil.write("Text", paper);
+      expect(actual).toBe("Tex ")
     });
     it("should have a durability and length", function(){
       var newPencil = new Pencil(50, 8)

@@ -8,7 +8,7 @@ var Pencil = function(rating, length) {
 
 //Functions
 Pencil.prototype.write = function(words, paper) {
-  if(this.sharpness >= words.length) {
+  if(this.sharpness > words.replace(/\s/g, '').length && words.toLowerCase() == words) {
     this.dullThePencil(words);
   }
   else {
@@ -27,8 +27,8 @@ Pencil.prototype.dullThePencil = function(words) {
 };
 Pencil.prototype.writeAsMuchAsYouCan = function(words) {
   let pointOfDullarity = 0;
-  for (let i = 0; this.sharpness > 0; i++) {
-    if (words.charAt(i) == '\s' ) {
+  for (let i = 0; this.sharpness > 0 && i < words.length; i++) {
+    if (words.charAt(i) == ' ') {
     }
     else if (words.charAt(i) != words.charAt(i).toLowerCase()) {
       this.sharpness = this.sharpness -2;
