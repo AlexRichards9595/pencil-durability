@@ -2,12 +2,10 @@ var Paper = function() {
   this.text = ''
 };
 
-
 //Functions
 Paper.prototype.scrapIt = function () {
   this.text = '';
 };
-
 Paper.prototype.edit = function(words) {
   let index = this.text.indexOf("  ") ;
   if (index != -1) {

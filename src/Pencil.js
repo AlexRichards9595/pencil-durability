@@ -25,8 +25,7 @@ Pencil.prototype.writeAsMuchAsYouCan = function(words) {
     }
     pointOfDullarity++;
   }
-  let unwrittenString = words.slice(pointOfDullarity).replace(/[a-zA-Z0-9]/g, ' ');
-  words = words.slice(0, pointOfDullarity) + unwrittenString;
+  words = words.slice(0, pointOfDullarity) +  words.slice(pointOfDullarity).replace(/[a-zA-Z0-9]/g, ' ');;
   return words;
 };
 Pencil.prototype.sharpen = function() {
